@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" ambiguous="YES" placeholder="Search Events" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBb-ao-ikU">
+                            <searchBar contentMode="redraw" placeholder="Search Events" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBb-ao-ikU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <color key="barTintColor" name="AccentColor"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -38,8 +38,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="8O3-kD-7VK" secondAttribute="bottom" id="6tZ-II-L5D"/>
                             <constraint firstItem="dBb-ao-ikU" firstAttribute="top" secondItem="8O3-kD-7VK" secondAttribute="bottom" id="C5Z-SW-bkp"/>
                             <constraint firstItem="8O3-kD-7VK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FY6-zN-tlM"/>
+                            <constraint firstItem="dBb-ao-ikU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GmV-yL-Lbo"/>
                             <constraint firstItem="6U1-Dt-tRN" firstAttribute="top" secondItem="dBb-ao-ikU" secondAttribute="bottom" id="Kl3-WX-9ek"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6U1-Dt-tRN" secondAttribute="trailing" id="MP1-G5-4Os"/>
+                            <constraint firstItem="dBb-ao-ikU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Nka-Sf-zwi"/>
                             <constraint firstAttribute="bottom" secondItem="6U1-Dt-tRN" secondAttribute="bottom" id="Pdu-cg-4lw"/>
                             <constraint firstItem="6U1-Dt-tRN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T7s-Np-rrn"/>
                             <constraint firstItem="8O3-kD-7VK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZLx-oa-GAa"/>
