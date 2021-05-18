@@ -56,15 +56,55 @@
 		A57E68E8265454D800DD11A4 /* FetchRewards */ = {
 			isa = PBXGroup;
 			children = (
-				A57E68E9265454D800DD11A4 /* AppDelegate.swift */,
-				A57E68EB265454D800DD11A4 /* SceneDelegate.swift */,
-				A57E68ED265454D800DD11A4 /* ViewController.swift */,
-				A57E68EF265454D800DD11A4 /* Main.storyboard */,
-				A57E68F2265454DC00DD11A4 /* Assets.xcassets */,
-				A57E68F4265454DC00DD11A4 /* LaunchScreen.storyboard */,
-				A57E68F7265454DC00DD11A4 /* Info.plist */,
+				A57E6902265459D500DD11A4 /* SupportingFiles */,
+				A57E69012654594300DD11A4 /* Managers */,
+				A57E69002654593C00DD11A4 /* Controller */,
+				A57E68FF2654593600DD11A4 /* View */,
+				A57E68FE2654592700DD11A4 /* Model */,
 			);
 			path = FetchRewards;
+			sourceTree = "<group>";
+		};
+		A57E68FE2654592700DD11A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A57E68FF2654593600DD11A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A57E68EF265454D800DD11A4 /* Main.storyboard */,
+				A57E68F4265454DC00DD11A4 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A57E69002654593C00DD11A4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A57E68ED265454D800DD11A4 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A57E69012654594300DD11A4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A57E6902265459D500DD11A4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A57E68E9265454D800DD11A4 /* AppDelegate.swift */,
+				A57E68EB265454D800DD11A4 /* SceneDelegate.swift */,
+				A57E68F2265454DC00DD11A4 /* Assets.xcassets */,
+				A57E68F7265454DC00DD11A4 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "James-Sedlacek.FetchRewards";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "James-Sedlacek.FetchRewards";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
