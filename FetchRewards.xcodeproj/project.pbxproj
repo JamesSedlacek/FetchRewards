@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A57E68EA265454D800DD11A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E68E9265454D800DD11A4 /* AppDelegate.swift */; };
 		A57E68EC265454D800DD11A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E68EB265454D800DD11A4 /* SceneDelegate.swift */; };
-		A57E68EE265454D800DD11A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E68ED265454D800DD11A4 /* ViewController.swift */; };
 		A57E68F1265454D800DD11A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E68EF265454D800DD11A4 /* Main.storyboard */; };
 		A57E68F3265454DC00DD11A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E68F2265454DC00DD11A4 /* Assets.xcassets */; };
 		A57E68F6265454DC00DD11A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E68F4265454DC00DD11A4 /* LaunchScreen.storyboard */; };
@@ -17,13 +16,13 @@
 		A57E690C265462E200DD11A4 /* EventTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57E690A265462E200DD11A4 /* EventTVCell.xib */; };
 		A57E690F2654699400DD11A4 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E690E2654699400DD11A4 /* ApiManager.swift */; };
 		A57E6912265471C300DD11A4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E6911265471C300DD11A4 /* Event.swift */; };
+		A57E69162654796200DD11A4 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69152654796200DD11A4 /* SearchVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A57E68E6265454D800DD11A4 /* FetchRewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRewards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E68E9265454D800DD11A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57E68EB265454D800DD11A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A57E68ED265454D800DD11A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A57E68F0265454D800DD11A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A57E68F2265454DC00DD11A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A57E68F5265454DC00DD11A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		A57E690A265462E200DD11A4 /* EventTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTVCell.xib; sourceTree = "<group>"; };
 		A57E690E2654699400DD11A4 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		A57E6911265471C300DD11A4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A57E69152654796200DD11A4 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +64,7 @@
 		A57E68E8265454D800DD11A4 /* FetchRewards */ = {
 			isa = PBXGroup;
 			children = (
+				A57E68F7265454DC00DD11A4 /* Info.plist */,
 				A57E6902265459D500DD11A4 /* SupportingFiles */,
 				A57E69012654594300DD11A4 /* Managers */,
 				A57E69002654593C00DD11A4 /* Controller */,
@@ -95,7 +96,7 @@
 		A57E69002654593C00DD11A4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A57E68ED265454D800DD11A4 /* ViewController.swift */,
+				A57E69152654796200DD11A4 /* SearchVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 				A57E68E9265454D800DD11A4 /* AppDelegate.swift */,
 				A57E68EB265454D800DD11A4 /* SceneDelegate.swift */,
 				A57E68F2265454DC00DD11A4 /* Assets.xcassets */,
-				A57E68F7265454DC00DD11A4 /* Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -191,11 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57E690B265462E200DD11A4 /* EventTVCell.swift in Sources */,
-				A57E68EE265454D800DD11A4 /* ViewController.swift in Sources */,
 				A57E690F2654699400DD11A4 /* ApiManager.swift in Sources */,
 				A57E68EA265454D800DD11A4 /* AppDelegate.swift in Sources */,
 				A57E6912265471C300DD11A4 /* Event.swift in Sources */,
 				A57E68EC265454D800DD11A4 /* SceneDelegate.swift in Sources */,
+				A57E69162654796200DD11A4 /* SearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

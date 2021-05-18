@@ -36,6 +36,10 @@ import  UIKit
 // MARK: - Decodable Structs
 
 struct ResponseDocument: Decodable {
+    var events: [DecodeEvents]
+}
+
+struct DecodeEvents: Decodable {
     var title: String
     var datetime_local: String
     var venue: venue
@@ -59,7 +63,7 @@ struct ApiManager {
     
     private static let apiEndpoint: String = "https://api.seatgeek.com/2"
     private static let queryEndpoint: String = "/events?q="
-    private static let clientIDEndpoint: String = "?client_id="
+    private static let clientIDEndpoint: String = "&client_id="
     private static let clientID: String = "MjE5NTUzNzh8MTYyMTM3MzcyMy4xOTk4NzY4"
     
     // MARK: - Fetch Events
@@ -71,6 +75,7 @@ struct ApiManager {
                                 clientIDEndpoint +
                                 clientID
         
+        print("URL: \(urlString)")
         if let url = Foundation.URL(string: urlString) { //create URL
             let session = URLSession(configuration: .default) //Create URL Session
             let task = session.dataTask(with: url, completionHandler: { (data, response, error) in //Give the session a task
@@ -95,8 +100,8 @@ struct ApiManager {
     private static func parseJSON(with data: Data) {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode([ResponseDocument].self, from: data)
-            for document in decodedData {
+            let decodedData = try decoder.decode(ResponseDocument.self, from: data)
+            for document in decodedData.events {
                 print(document)
                 //TODO: Convert ResponseDocuments into Events
             }

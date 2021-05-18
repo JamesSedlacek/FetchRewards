@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SearchVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FetchRewards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchVC" customModule="FetchRewards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                             <searchBar contentMode="redraw" placeholder="Search Events" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBb-ao-ikU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <color key="barTintColor" name="AccentColor"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8O3-kD-7VK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -49,6 +49,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="dBb-ao-ikU" id="vWb-gd-Uuj"/>
+                        <outlet property="tableView" destination="6U1-Dt-tRN" id="GiE-HS-3IT"/>
                         <segue destination="brE-xO-U99" kind="presentation" identifier="ShowEventSegue" modalPresentationStyle="fullScreen" id="sHO-KR-g3u"/>
                     </connections>
                 </viewController>
@@ -154,7 +156,7 @@
         <image name="LeftChevron" width="512" height="512"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <namedColor name="AccentColor">
-            <color red="0.1922170222" green="0.24086180330000001" blue="0.30727010970000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.19200000166893005" green="0.24099999666213989" blue="0.30700001120567322" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
