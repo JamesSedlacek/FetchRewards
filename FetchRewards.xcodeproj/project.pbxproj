@@ -13,6 +13,8 @@
 		A57E68F1265454D800DD11A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E68EF265454D800DD11A4 /* Main.storyboard */; };
 		A57E68F3265454DC00DD11A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E68F2265454DC00DD11A4 /* Assets.xcassets */; };
 		A57E68F6265454DC00DD11A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E68F4265454DC00DD11A4 /* LaunchScreen.storyboard */; };
+		A57E690B265462E200DD11A4 /* EventTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E6909265462E200DD11A4 /* EventTVCell.swift */; };
+		A57E690C265462E200DD11A4 /* EventTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57E690A265462E200DD11A4 /* EventTVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A57E68F2265454DC00DD11A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A57E68F5265454DC00DD11A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57E68F7265454DC00DD11A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57E6909265462E200DD11A4 /* EventTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTVCell.swift; sourceTree = "<group>"; };
+		A57E690A265462E200DD11A4 /* EventTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			children = (
 				A57E68EF265454D800DD11A4 /* Main.storyboard */,
 				A57E68F4265454DC00DD11A4 /* LaunchScreen.storyboard */,
+				A57E6909265462E200DD11A4 /* EventTVCell.swift */,
+				A57E690A265462E200DD11A4 /* EventTVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57E690C265462E200DD11A4 /* EventTVCell.xib in Resources */,
 				A57E68F6265454DC00DD11A4 /* LaunchScreen.storyboard in Resources */,
 				A57E68F3265454DC00DD11A4 /* Assets.xcassets in Resources */,
 				A57E68F1265454D800DD11A4 /* Main.storyboard in Resources */,
@@ -177,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57E690B265462E200DD11A4 /* EventTVCell.swift in Sources */,
 				A57E68EE265454D800DD11A4 /* ViewController.swift in Sources */,
 				A57E68EA265454D800DD11A4 /* AppDelegate.swift in Sources */,
 				A57E68EC265454D800DD11A4 /* SceneDelegate.swift in Sources */,
