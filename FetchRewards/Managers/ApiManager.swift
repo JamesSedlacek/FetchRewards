@@ -55,4 +55,57 @@ struct venue: Decodable {
 
 struct ApiManager {
     
+    // MARK: - Constants
+    
+    private static let apiEndpoint: String = "https://api.seatgeek.com/2"
+    private static let queryEndpoint: String = "/events?q="
+    private static let clientIDEndpoint: String = "?client_id="
+    private static let clientID: String = "MjE5NTUzNzh8MTYyMTM3MzcyMy4xOTk4NzY4"
+    
+    // MARK: - Fetch Events
+    
+    public static func fetchEvents(for queryString: String) {
+        let urlString: String = apiEndpoint +
+                                queryEndpoint +
+                                queryString +
+                                clientIDEndpoint +
+                                clientID
+        
+        if let url = Foundation.URL(string: urlString) { //create URL
+            let session = URLSession(configuration: .default) //Create URL Session
+            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in //Give the session a task
+                
+                //if there's an error, print the error and exit the function
+                if let theError = error {
+                    print(theError)
+                    return
+                }
+                
+                //if there is data, parse the JSON
+                if let safeData = data {
+                    self.parseJSON(with: safeData)
+                }
+            })
+            task.resume() //Start the task
+        }
+    }
+    
+    //MARK: - Parse JSON
+    
+    private static func parseJSON(with data: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode([ResponseDocument].self, from: data)
+            for document in decodedData {
+                print(document)
+                //TODO: Convert ResponseDocuments into Events
+            }
+            //TODO: Call a delegate to update the tableview with new events
+        } catch {
+            print("Parse JSON Error: \(error)")
+            return //nil
+        }
+        
+    }
+
 }
