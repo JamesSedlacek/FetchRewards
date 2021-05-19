@@ -15,6 +15,8 @@ class ShowEventVC: UIViewController {
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var globeButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -40,6 +42,17 @@ class ShowEventVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func mapButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func globeButtonTapped(_ sender: UIButton) {
+        if  let safeEvent = eventToShow,
+            let url = URL(string: safeEvent.url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     // MARK: - ViewDidLoad
 
     override func viewDidLoad() {
@@ -56,6 +69,8 @@ class ShowEventVC: UIViewController {
         titleLabel.text = safeEvent.title
         dateLabel.text = safeEvent.date + " " + safeEvent.time
         locationLabel.text = safeEvent.location
+        mapButton.layer.cornerRadius = mapButton.layer.frame.width / 2
+        globeButton.layer.cornerRadius = globeButton.layer.frame.width / 2
     }
     
     private func setHeartIcon() {

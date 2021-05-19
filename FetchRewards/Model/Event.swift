@@ -15,11 +15,13 @@ class Event {
     var imageUrlString: String
     var image: UIImage?
     var id: Int
+    var url: String
     
-    init(id: Int, title: String, dateTime: String, location: String, imageUrlString: String) {
+    init(id: Int, title: String, dateTime: String, location: String, imageUrlString: String, url: String) {
         self.id = id
         self.title = title
         self.location = location
+        self.url = url
         self.imageUrlString = imageUrlString
         self.date = ""
         self.time = ""

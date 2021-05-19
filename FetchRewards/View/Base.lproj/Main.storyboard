@@ -123,11 +123,47 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tampa, FL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qba-Nn-2X9">
-                                <rect key="frame" x="25" y="546" width="80.5" height="21"/>
+                                <rect key="frame" x="25" y="546" width="80.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="06Z-Pw-YxV">
+                                <rect key="frame" x="132" y="787" width="150" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuQ-5X-Xg5">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="121-XA-K7C"/>
+                                            <constraint firstAttribute="width" constant="50" id="99r-75-Qwl"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="image" image="map" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mapButtonTapped:" destination="brE-xO-U99" eventType="touchUpInside" id="nwX-YW-lg3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tt-WJ-Dch">
+                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="D7i-MF-TRc"/>
+                                            <constraint firstAttribute="height" constant="50" id="eHY-oz-f5o"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="globe" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="globeButtonTapped:" destination="brE-xO-U99" eventType="touchUpInside" id="ohl-uj-PSk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IJw-e8-TW3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -143,6 +179,7 @@
                             <constraint firstItem="IJw-e8-TW3" firstAttribute="trailing" secondItem="oe5-TV-Q0E" secondAttribute="trailing" constant="25" id="Pxm-WP-hqr"/>
                             <constraint firstItem="yaH-lf-gV6" firstAttribute="top" secondItem="oe5-TV-Q0E" secondAttribute="bottom" constant="25" id="TcK-Xw-Spq"/>
                             <constraint firstItem="Lpv-dE-Ar2" firstAttribute="leading" secondItem="6w1-Ve-nSJ" secondAttribute="trailing" constant="25" id="Umq-cp-aEf"/>
+                            <constraint firstItem="06Z-Pw-YxV" firstAttribute="centerX" secondItem="zkt-PD-Kll" secondAttribute="centerX" id="VF8-c6-Dgd"/>
                             <constraint firstItem="qba-Nn-2X9" firstAttribute="top" secondItem="poX-C5-FKX" secondAttribute="bottom" constant="10" id="WCT-7C-ixU"/>
                             <constraint firstItem="yaH-lf-gV6" firstAttribute="leading" secondItem="IJw-e8-TW3" secondAttribute="leading" constant="25" id="a09-JM-4r4"/>
                             <constraint firstItem="poX-C5-FKX" firstAttribute="top" secondItem="yaH-lf-gV6" secondAttribute="bottom" constant="25" id="a2c-6z-TMa"/>
@@ -151,14 +188,17 @@
                             <constraint firstItem="oe5-TV-Q0E" firstAttribute="top" secondItem="6w1-Ve-nSJ" secondAttribute="bottom" constant="15" id="bz0-Jr-5Kh"/>
                             <constraint firstItem="IJw-e8-TW3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="poX-C5-FKX" secondAttribute="trailing" symbolic="YES" id="f3R-L9-eJ3"/>
                             <constraint firstItem="IJw-e8-TW3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qba-Nn-2X9" secondAttribute="trailing" symbolic="YES" id="npo-0L-8nb"/>
+                            <constraint firstItem="IJw-e8-TW3" firstAttribute="bottom" secondItem="06Z-Pw-YxV" secondAttribute="bottom" constant="25" id="uyO-i0-8fF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9By-2X-fJL"/>
                     <connections>
                         <outlet property="dateLabel" destination="poX-C5-FKX" id="Off-ED-8yR"/>
                         <outlet property="displayedImageView" destination="yaH-lf-gV6" id="IlX-cu-KY7"/>
+                        <outlet property="globeButton" destination="5Tt-WJ-Dch" id="kNT-p1-q5h"/>
                         <outlet property="heartButton" destination="Lpv-dE-Ar2" id="CYd-r8-EBP"/>
                         <outlet property="locationLabel" destination="qba-Nn-2X9" id="cZH-H2-054"/>
+                        <outlet property="mapButton" destination="IuQ-5X-Xg5" id="kdD-bb-kDq"/>
                         <outlet property="titleLabel" destination="6w1-Ve-nSJ" id="org-gL-EEr"/>
                     </connections>
                 </viewController>
@@ -186,7 +226,9 @@
     </scenes>
     <resources>
         <image name="LeftChevron" width="512" height="512"/>
+        <image name="globe" catalog="system" width="128" height="121"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <namedColor name="AccentColor">
             <color red="0.19200000166893005" green="0.24099999666213989" blue="0.30700001120567322" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

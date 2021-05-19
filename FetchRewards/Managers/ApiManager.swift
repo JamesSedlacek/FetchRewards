@@ -45,6 +45,7 @@ struct DecodeEvents: Decodable {
     var venue: venue
     var performers: [performers]
     var id: Int
+    var url: String
 }
 
 struct performers: Decodable {
@@ -110,7 +111,8 @@ struct ApiManager {
                                     title: document.title,
                                     dateTime: document.datetime_local,
                                     location: location,
-                                    imageUrlString: document.performers[0].image))
+                                    imageUrlString: document.performers[0].image,
+                                    url: document.url))
             }
             
             eventDelegate?.updateEvents(events: events)
