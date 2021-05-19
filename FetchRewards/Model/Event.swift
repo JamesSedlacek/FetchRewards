@@ -14,16 +14,16 @@ class Event {
     var location: String
     var imageUrlString: String
     var image: UIImage?
-    var isFavorited: Bool
+    var id: Int
     
-    init(title: String, dateTime: String, location: String, imageUrlString: String) {
+    init(id: Int, title: String, dateTime: String, location: String, imageUrlString: String) {
+        self.id = id
         self.title = title
         self.location = location
         self.imageUrlString = imageUrlString
         self.date = ""
         self.time = ""
         self.image = nil
-        self.isFavorited = false
         formatDateAndTime(from: dateTime)
         loadImage()
     }

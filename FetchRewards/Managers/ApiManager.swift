@@ -44,6 +44,7 @@ struct DecodeEvents: Decodable {
     var datetime_local: String
     var venue: venue
     var performers: [performers]
+    var id: Int
 }
 
 struct performers: Decodable {
@@ -76,7 +77,6 @@ struct ApiManager {
                                 clientIDEndpoint +
                                 clientID
         
-        print("URL: \(urlString)")
         if let url = Foundation.URL(string: urlString) { //create URL
             let session = URLSession(configuration: .default) //Create URL Session
             let task = session.dataTask(with: url, completionHandler: { (data, response, error) in //Give the session a task
@@ -106,7 +106,8 @@ struct ApiManager {
             for document in decodedData.events {
                 let location = document.venue.city +  ", " + document.venue.state
                 
-                events.append(Event(title: document.title,
+                events.append(Event(id: document.id,
+                                    title: document.title,
                                     dateTime: document.datetime_local,
                                     location: location,
                                     imageUrlString: document.performers[0].image))
@@ -114,7 +115,8 @@ struct ApiManager {
             
             eventDelegate?.updateEvents(events: events)
         } catch {
-            print("Parse JSON Error: \(error)")
+            //Use this for debugging
+//            print("Parse JSON Error: \(error)")
             return //nil
         }
         

@@ -25,14 +25,19 @@ class ShowEventVC: UIViewController {
     
     @IBAction func heartButtonTapped(_ sender: UIButton) {
         guard let safeEvent = eventToShow else { return }
-        safeEvent.isFavorited.toggle()
+        let isFavorited = UserDefaultsManager.contains(key: .Favorites, element: safeEvent.id)
+        
+        if isFavorited {
+            UserDefaultsManager.remove(favoriteID: safeEvent.id)
+        } else {
+            UserDefaultsManager.append(favoriteID: safeEvent.id)
+        }
+        
         setHeartIcon()
-        //TODO: Add-to/remove-from favorited events
-        //TODO: persist data
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - ViewDidLoad
@@ -45,9 +50,9 @@ class ShowEventVC: UIViewController {
     
     private func setup() {
         guard let safeEvent = eventToShow else { return }
+        displayedImageView.image = safeEvent.image
         displayedImageView.layer.cornerRadius = 8
         displayedImageView.clipsToBounds = true
-        displayedImageView.image = safeEvent.image
         titleLabel.text = safeEvent.title
         dateLabel.text = safeEvent.date + " " + safeEvent.time
         locationLabel.text = safeEvent.location
@@ -55,9 +60,10 @@ class ShowEventVC: UIViewController {
     
     private func setHeartIcon() {
         guard let safeEvent = eventToShow else { return }
-        let iconImage = safeEvent.isFavorited ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        let isFavorited = UserDefaultsManager.contains(key: .Favorites, element: safeEvent.id)
+        let iconImage = isFavorited ? K.Images.heartFilled : K.Images.emptyHeart
+        heartButton.tintColor = isFavorited ? .red : .black
         heartButton.setImage(iconImage, for: .normal)
-        heartButton.tintColor = safeEvent.isFavorited ? .red : .black
     }
 
 }

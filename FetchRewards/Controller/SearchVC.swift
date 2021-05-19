@@ -7,51 +7,65 @@
 
 import UIKit
 
+// MARK: - Protocols
+
 protocol EventDelegate {
     func updateEvents(events: [Event])
 }
+
+// MARK: - SearchVC Class
 
 class SearchVC: UIViewController {
     
     // MARK: - Variables
     
-    var eventsToShow: [Event] = [] //TODO: get from UserDefaults
+    var eventsToShow: [Event] = [] 
     var eventDelegate: EventDelegate?
     var selectedEvent: Event?
-    let cellIdentifier = "EventTVCell"
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    // MARK: - IBActions
+    // MARK: - ViewWillAppear
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
     
     // MARK: - ViewDidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegates()
         setupTableView()
         setupSearchBar()
+        addObserver()
+    }
+    
+    private func setDelegates() {
         ApiManager.eventDelegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        searchBar.delegate = self
+    }
+    
+    private func addObserver() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateTableView),
                                                name: NSNotification.Name(rawValue: "UpdateTableView"),
                                                object: .none)
     }
     
-    
-    
     private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.tableFooterView = UIView() //remove extra lines at bottom
-        tableView.register(UINib(nibName: cellIdentifier, bundle: nil),
-                           forCellReuseIdentifier: cellIdentifier)
+        tableView.register(UINib(nibName: K.Identifiers.cellIdentifier, bundle: nil),
+                           forCellReuseIdentifier: K.Identifiers.cellIdentifier)
     }
     
     private func setupSearchBar() {
-        searchBar.delegate = self
         if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton {
             cancelButton.isEnabled = true
         }
@@ -75,6 +89,7 @@ class SearchVC: UIViewController {
     }
     
     // MARK: - perform segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ShowEventVC,
            let safeEvent = selectedEvent {
@@ -98,7 +113,11 @@ extension SearchVC: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.count == 0 { return }
+        if searchText.count == 0 {
+            eventsToShow = []
+            tableView.reloadData()
+            return
+        }
         let safeString = searchText.replacingOccurrences(of: " ", with: "+")
         ApiManager.fetchEvents(for: safeString)
     }
@@ -112,7 +131,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? EventTVCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.cellIdentifier) as? EventTVCell else { return UITableViewCell() }
         
         guard let image = eventsToShow[indexPath.row].image else { return UITableViewCell() }
         
@@ -122,21 +141,22 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = eventsToShow[indexPath.row].title
         cell.displayedImageView.image = image
         
-        //TODO: fix logic when persistence is done, if needed
-        if !eventsToShow[indexPath.row].isFavorited {
-            cell.heartImageView.alpha = 0
-        }
+        let isFavorited = UserDefaultsManager.contains(key: .Favorites,
+                                                       element: eventsToShow[indexPath.row].id)
+        
+        cell.heartImageView.alpha = isFavorited ? 1.0 : 0.0
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedEvent = eventsToShow[indexPath.row]
-        performSegue(withIdentifier: "ShowEventSegue", sender: nil)
+        performSegue(withIdentifier: K.Identifiers.showEventSegue, sender: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return K.Numbers.rowHeight
     }
 }
 

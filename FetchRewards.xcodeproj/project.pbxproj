@@ -18,6 +18,8 @@
 		A57E6912265471C300DD11A4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E6911265471C300DD11A4 /* Event.swift */; };
 		A57E69162654796200DD11A4 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69152654796200DD11A4 /* SearchVC.swift */; };
 		A57E691C2654A8E200DD11A4 /* ShowEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E691B2654A8E100DD11A4 /* ShowEventVC.swift */; };
+		A57E6920265549DA00DD11A4 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E691F265549DA00DD11A4 /* UserDefaultsManager.swift */; };
+		A57E69232655629F00DD11A4 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69222655629F00DD11A4 /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		A57E6911265471C300DD11A4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A57E69152654796200DD11A4 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		A57E691B2654A8E100DD11A4 /* ShowEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventVC.swift; sourceTree = "<group>"; };
+		A57E691F265549DA00DD11A4 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		A57E69222655629F00DD11A4 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				A57E690E2654699400DD11A4 /* ApiManager.swift */,
+				A57E691F265549DA00DD11A4 /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				A57E68E9265454D800DD11A4 /* AppDelegate.swift */,
 				A57E68EB265454D800DD11A4 /* SceneDelegate.swift */,
 				A57E68F2265454DC00DD11A4 /* Assets.xcassets */,
+				A57E69222655629F00DD11A4 /* K.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -193,12 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57E69232655629F00DD11A4 /* K.swift in Sources */,
 				A57E691C2654A8E200DD11A4 /* ShowEventVC.swift in Sources */,
 				A57E690B265462E200DD11A4 /* EventTVCell.swift in Sources */,
 				A57E690F2654699400DD11A4 /* ApiManager.swift in Sources */,
 				A57E68EA265454D800DD11A4 /* AppDelegate.swift in Sources */,
 				A57E6912265471C300DD11A4 /* Event.swift in Sources */,
 				A57E68EC265454D800DD11A4 /* SceneDelegate.swift in Sources */,
+				A57E6920265549DA00DD11A4 /* UserDefaultsManager.swift in Sources */,
 				A57E69162654796200DD11A4 /* SearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
