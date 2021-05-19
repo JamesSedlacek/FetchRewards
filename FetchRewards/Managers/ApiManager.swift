@@ -65,6 +65,7 @@ struct ApiManager {
     private static let queryEndpoint: String = "/events?q="
     private static let clientIDEndpoint: String = "&client_id="
     private static let clientID: String = "MjE5NTUzNzh8MTYyMTM3MzcyMy4xOTk4NzY4"
+    public static var eventDelegate: EventDelegate?
     
     // MARK: - Fetch Events
     
@@ -103,8 +104,6 @@ struct ApiManager {
         do {
             let decodedData = try decoder.decode(ResponseDocument.self, from: data)
             for document in decodedData.events {
-                //TODO: get properly formatted date
-                //TODO: get properly formatted time
                 let location = document.venue.city +  ", " + document.venue.state
                 
                 events.append(Event(title: document.title,
@@ -112,7 +111,8 @@ struct ApiManager {
                                     location: location,
                                     imageUrlString: document.performers[0].image))
             }
-            //TODO: Call a delegate to update the tableview with new events
+            
+            eventDelegate?.updateEvents(events: events)
         } catch {
             print("Parse JSON Error: \(error)")
             return //nil
