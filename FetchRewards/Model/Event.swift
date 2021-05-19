@@ -64,7 +64,9 @@ class Event {
             }
             
             DispatchQueue.main.async {
-                NotificationCenter.default.post(name:NSNotification.Name(rawValue: "UpdateTableView"), object: nil)
+                let name = K.NSNotificationName.UpdateTableView.rawValue
+                NotificationCenter.default.post(name:NSNotification.Name(rawValue: name),
+                                                object: nil)
             }
         })
     }

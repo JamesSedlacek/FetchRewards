@@ -29,4 +29,10 @@ struct K {
         static let rowHeight: CGFloat = 200
     }
     
+    // MARK: - Notification Name
+    
+    enum NSNotificationName: String {
+        case UpdateTableView = "UpdateTableView"
+    }
+    
 }
