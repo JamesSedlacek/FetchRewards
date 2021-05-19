@@ -98,12 +98,19 @@ struct ApiManager {
     //MARK: - Parse JSON
     
     private static func parseJSON(with data: Data) {
+        var events: [Event] = []
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ResponseDocument.self, from: data)
             for document in decodedData.events {
-                print(document)
-                //TODO: Convert ResponseDocuments into Events
+                //TODO: get properly formatted date
+                //TODO: get properly formatted time
+                let location = document.venue.city +  ", " + document.venue.state
+                
+                events.append(Event(title: document.title,
+                                    dateTime: document.datetime_local,
+                                    location: location,
+                                    imageUrlString: document.performers[0].image))
             }
             //TODO: Call a delegate to update the tableview with new events
         } catch {
@@ -112,5 +119,7 @@ struct ApiManager {
         }
         
     }
+    
+    
 
 }
