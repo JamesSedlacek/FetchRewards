@@ -145,6 +145,7 @@
                                         </state>
                                         <connections>
                                             <action selector="mapButtonTapped:" destination="brE-xO-U99" eventType="touchUpInside" id="nwX-YW-lg3"/>
+                                            <segue destination="asP-kf-3Kk" kind="show" identifier="MapSegue" id="CMU-81-EB4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tt-WJ-Dch">
@@ -206,6 +207,60 @@
             </objects>
             <point key="canvasLocation" x="1744.9275362318842" y="103.79464285714285"/>
         </scene>
+        <!--MapVC-->
+        <scene sceneID="9ZR-rh-Eec">
+            <objects>
+                <viewController id="asP-kf-3Kk" customClass="MapVC" customModule="FetchRewards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hE2-7h-ayO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBZ-jG-jWN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gzR-aK-HDL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJp-dQ-OvK">
+                                <rect key="frame" x="25" y="44" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="30T-xw-SnD"/>
+                                    <constraint firstAttribute="height" constant="30" id="CsB-X2-mW2"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <action selector="xmarkButtonTapped:" destination="asP-kf-3Kk" eventType="touchUpInside" id="ddl-cc-HTf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XoH-NX-fJ2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vBZ-jG-jWN" firstAttribute="leading" secondItem="XoH-NX-fJ2" secondAttribute="leading" id="0qI-OB-kep"/>
+                            <constraint firstItem="rJp-dQ-OvK" firstAttribute="top" secondItem="XoH-NX-fJ2" secondAttribute="top" id="Nmq-Wu-6To"/>
+                            <constraint firstItem="rJp-dQ-OvK" firstAttribute="leading" secondItem="XoH-NX-fJ2" secondAttribute="leading" constant="25" id="Ot8-Dk-tqb"/>
+                            <constraint firstItem="vBZ-jG-jWN" firstAttribute="top" secondItem="hE2-7h-ayO" secondAttribute="top" id="Pia-9X-spc"/>
+                            <constraint firstAttribute="bottom" secondItem="vBZ-jG-jWN" secondAttribute="bottom" id="Pol-6r-x6E"/>
+                            <constraint firstItem="XoH-NX-fJ2" firstAttribute="trailing" secondItem="vBZ-jG-jWN" secondAttribute="trailing" id="hD9-22-uHu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VOb-Sb-f0h"/>
+                    <connections>
+                        <outlet property="mapView" destination="gzR-aK-HDL" id="vTA-As-n5f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R0F-c5-KuK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2449" y="104"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="fQz-S5-z1e">
             <objects>
@@ -229,6 +284,7 @@
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="map" catalog="system" width="128" height="110"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.19200000166893005" green="0.24099999666213989" blue="0.30700001120567322" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

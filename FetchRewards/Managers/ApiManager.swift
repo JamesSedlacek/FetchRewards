@@ -6,6 +6,7 @@
 //
 
 import  UIKit
+import CoreLocation
 
 // MARK: - API Info
 
@@ -55,6 +56,12 @@ struct performers: Decodable {
 struct venue: Decodable {
     var city: String
     var state: String
+    var location: location
+}
+
+struct location: Decodable {
+    var lat: Double
+    var lon: Double
 }
 
 // MARK: - API Manager
@@ -112,7 +119,9 @@ struct ApiManager {
                                     dateTime: document.datetime_local,
                                     location: location,
                                     imageUrlString: document.performers[0].image,
-                                    url: document.url))
+                                    url: document.url,
+                                    coordinates: CLLocationCoordinate2D(latitude: document.venue.location.lat,
+                                                                        longitude: document.venue.location.lon)))
             }
             
             eventDelegate?.updateEvents(events: events)

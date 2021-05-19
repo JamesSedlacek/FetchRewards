@@ -81,4 +81,11 @@ class ShowEventVC: UIViewController {
         heartButton.setImage(iconImage, for: .normal)
     }
 
+    // MARK: - Prepare Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let safeEvent = eventToShow else { return }
+        if let vc = segue.destination as? MapVC {
+            vc.eventLocation = safeEvent.coordinates
+        }
+    }
 }

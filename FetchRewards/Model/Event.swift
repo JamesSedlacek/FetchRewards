@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class Event {
     var title: String
@@ -16,13 +17,21 @@ class Event {
     var image: UIImage?
     var id: Int
     var url: String
+    var coordinates: CLLocationCoordinate2D
     
-    init(id: Int, title: String, dateTime: String, location: String, imageUrlString: String, url: String) {
+    init(id: Int,
+         title: String,
+         dateTime: String,
+         location: String,
+         imageUrlString: String,
+         url: String,
+         coordinates: CLLocationCoordinate2D) {
         self.id = id
         self.title = title
         self.location = location
         self.url = url
         self.imageUrlString = imageUrlString
+        self.coordinates = coordinates
         self.date = ""
         self.time = ""
         self.image = nil

@@ -14,6 +14,7 @@ struct K {
     struct Identifiers {
         static let cellIdentifier = "EventTVCell"
         static let showEventSegue = "ShowEventSegue"
+        static let mapSegue = "MapSegue"
     }
     
     // MARK: - Images
