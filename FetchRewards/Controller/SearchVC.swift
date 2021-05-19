@@ -17,6 +17,7 @@ class SearchVC: UIViewController {
     
     var eventsToShow: [Event] = [] //TODO: get from UserDefaults
     var eventDelegate: EventDelegate?
+    var selectedEvent: Event?
     let cellIdentifier = "EventTVCell"
     
     // MARK: - IBOutlets
@@ -72,6 +73,14 @@ class SearchVC: UIViewController {
     @objc private func updateTableView() {
         tableView.reloadData()
     }
+    
+    // MARK: - perform segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ShowEventVC,
+           let safeEvent = selectedEvent {
+            vc.eventToShow = safeEvent
+        }
+    }
 }
 
 // MARK: - SearchBar Delegate
@@ -119,6 +128,11 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedEvent = eventsToShow[indexPath.row]
+        performSegue(withIdentifier: "ShowEventSegue", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

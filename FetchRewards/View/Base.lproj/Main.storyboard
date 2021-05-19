@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="141" y="104"/>
         </scene>
-        <!--View Controller-->
+        <!--Show EventVC-->
         <scene sceneID="QuX-yj-jcS">
             <objects>
-                <viewController id="brE-xO-U99" sceneMemberID="viewController">
+                <viewController id="brE-xO-U99" customClass="ShowEventVC" customModule="FetchRewards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zkt-PD-Kll">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,18 +74,24 @@
                                     <constraint firstAttribute="height" constant="30" id="fCL-vt-fCr"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="LeftChevron"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="brE-xO-U99" eventType="touchUpInside" id="VSo-40-XNp"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-dE-Ar2">
+                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-dE-Ar2">
                                 <rect key="frame" x="349" y="44" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RnV-qi-3UQ"/>
                                     <constraint firstAttribute="width" constant="40" id="ZiV-6y-ncx"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25" scale="large" weight="regular"/>
                                 </state>
+                                <connections>
+                                    <action selector="heartButtonTapped:" destination="brE-xO-U99" eventType="touchUpInside" id="jEE-aK-WkW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Angeles Rams at Tampa Bay Buccaneers" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w1-Ve-nSJ">
                                 <rect key="frame" x="75" y="44" width="249" height="100"/>
@@ -147,6 +153,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9By-2X-fJL"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="poX-C5-FKX" id="Off-ED-8yR"/>
+                        <outlet property="displayedImageView" destination="yaH-lf-gV6" id="IlX-cu-KY7"/>
+                        <outlet property="heartButton" destination="Lpv-dE-Ar2" id="CYd-r8-EBP"/>
+                        <outlet property="locationLabel" destination="qba-Nn-2X9" id="cZH-H2-054"/>
+                        <outlet property="titleLabel" destination="6w1-Ve-nSJ" id="org-gL-EEr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTb-xI-HCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

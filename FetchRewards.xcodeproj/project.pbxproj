@@ -17,6 +17,7 @@
 		A57E690F2654699400DD11A4 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E690E2654699400DD11A4 /* ApiManager.swift */; };
 		A57E6912265471C300DD11A4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E6911265471C300DD11A4 /* Event.swift */; };
 		A57E69162654796200DD11A4 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69152654796200DD11A4 /* SearchVC.swift */; };
+		A57E691C2654A8E200DD11A4 /* ShowEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E691B2654A8E100DD11A4 /* ShowEventVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A57E690E2654699400DD11A4 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		A57E6911265471C300DD11A4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A57E69152654796200DD11A4 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		A57E691B2654A8E100DD11A4 /* ShowEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				A57E69152654796200DD11A4 /* SearchVC.swift */,
+				A57E691B2654A8E100DD11A4 /* ShowEventVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57E691C2654A8E200DD11A4 /* ShowEventVC.swift in Sources */,
 				A57E690B265462E200DD11A4 /* EventTVCell.swift in Sources */,
 				A57E690F2654699400DD11A4 /* ApiManager.swift in Sources */,
 				A57E68EA265454D800DD11A4 /* AppDelegate.swift in Sources */,
