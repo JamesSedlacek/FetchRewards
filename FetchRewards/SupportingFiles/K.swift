@@ -28,12 +28,20 @@ struct K {
     
     struct Numbers {
         static let rowHeight: CGFloat = 200
+        static let cornerRadius: CGFloat = 8
     }
     
     // MARK: - Notification Name
     
     enum NSNotificationName: String {
         case UpdateTableView = "UpdateTableView"
+    }
+    
+    // MARK: - SearchBar Keys
+    
+    enum SearchBarKeys: String {
+        case cancelButton = "cancelButton"
+        case searchField = "searchField"
     }
     
 }

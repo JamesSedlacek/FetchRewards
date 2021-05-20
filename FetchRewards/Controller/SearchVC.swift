@@ -53,9 +53,10 @@ class SearchVC: UIViewController {
     }
     
     private func addObserver() {
+        let name = K.NSNotificationName.UpdateTableView.rawValue
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateTableView),
-                                               name: NSNotification.Name(rawValue: "UpdateTableView"),
+                                               name: NSNotification.Name(rawValue: name),
                                                object: .none)
     }
     
@@ -66,10 +67,10 @@ class SearchVC: UIViewController {
     }
     
     private func setupSearchBar() {
-        if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton {
+        if let cancelButton = searchBar.value(forKey: K.SearchBarKeys.cancelButton.rawValue) as? UIButton {
             cancelButton.isEnabled = true
         }
-        if let textFieldInsideSearchBar = self.searchBar.value(forKey: "searchField") as? UITextField,
+        if let textFieldInsideSearchBar = self.searchBar.value(forKey: K.SearchBarKeys.searchField.rawValue) as? UITextField,
             let glassIconView = textFieldInsideSearchBar.leftView as? UIImageView {
 
                 //Magnifying glass
@@ -81,7 +82,6 @@ class SearchVC: UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
-//        searchBar.resignFirstResponder()
     }
     
     @objc private func updateTableView() {
@@ -118,6 +118,7 @@ extension SearchVC: UISearchBarDelegate {
             tableView.reloadData()
             return
         }
+        //replacing spaces with plus signs for querying
         let safeString = searchText.replacingOccurrences(of: " ", with: "+")
         ApiManager.fetchEvents(for: safeString)
     }
@@ -145,7 +146,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
                                                        element: eventsToShow[indexPath.row].id)
         
         cell.heartImageView.alpha = isFavorited ? 1.0 : 0.0
-        
         
         return cell
     }

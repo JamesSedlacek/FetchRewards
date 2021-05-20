@@ -128,7 +128,7 @@ struct ApiManager {
         } catch {
             //Use this for debugging
 //            print("Parse JSON Error: \(error)")
-            return //nil
+            return
         }
         
     }

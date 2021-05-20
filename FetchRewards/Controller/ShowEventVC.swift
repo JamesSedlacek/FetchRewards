@@ -42,10 +42,6 @@ class ShowEventVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func mapButtonTapped(_ sender: UIButton) {
-        
-    }
-    
     @IBAction func globeButtonTapped(_ sender: UIButton) {
         if  let safeEvent = eventToShow,
             let url = URL(string: safeEvent.url) {
@@ -64,7 +60,7 @@ class ShowEventVC: UIViewController {
     private func setup() {
         guard let safeEvent = eventToShow else { return }
         displayedImageView.image = safeEvent.image
-        displayedImageView.layer.cornerRadius = 8
+        displayedImageView.layer.cornerRadius = K.Numbers.cornerRadius
         displayedImageView.clipsToBounds = true
         titleLabel.text = safeEvent.title
         dateLabel.text = safeEvent.date + " " + safeEvent.time
@@ -82,6 +78,7 @@ class ShowEventVC: UIViewController {
     }
 
     // MARK: - Prepare Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let safeEvent = eventToShow else { return }
         if let vc = segue.destination as? MapVC {

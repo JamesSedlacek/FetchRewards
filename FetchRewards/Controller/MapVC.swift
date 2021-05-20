@@ -14,7 +14,6 @@ class MapVC: UIViewController {
     // MARK: - Variables
     
     var eventLocation: CLLocationCoordinate2D?
-    private let locationManager = CLLocationManager()
     
     // MARK: - IBOutlets
     
