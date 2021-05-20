@@ -144,7 +144,6 @@
                                             <imageReference key="image" image="map" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
-                                            <action selector="mapButtonTapped:" destination="brE-xO-U99" eventType="touchUpInside" id="nwX-YW-lg3"/>
                                             <segue destination="asP-kf-3Kk" kind="show" identifier="MapSegue" id="CMU-81-EB4"/>
                                         </connections>
                                     </button>
