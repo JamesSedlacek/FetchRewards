@@ -5,6 +5,12 @@
   <h2>Table of Contents</h2>
   <ul>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#demo-videos">Demo Videos</a></li>
+      <ul>
+        <li><a href="https://github.com/JamesSedlacek/FetchRewards#favorite--unfavorite">Favorite & Unfavorite</a></li>
+        <li><a href="https://github.com/JamesSedlacek/FetchRewards#searching">Searching</a></li>
+        <li><a href="https://github.com/JamesSedlacek/FetchRewards#globe-button">Globe Button</a></li>
+        <li><a href="https://github.com/JamesSedlacek/FetchRewards#map-button">Map Button</a></li>
+      </ul>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#screenshots">Screenshots</a></li>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#about-the-project">About The Project</a></li>
       <ul>
