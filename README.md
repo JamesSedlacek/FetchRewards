@@ -4,13 +4,13 @@
 <div>
   <h2>Table of Contents</h2>
   <ul>
-    <li><a href="url">Demo Videos</a></li>
-    <li><a href="url">Screenshots</a></li>
-    <li><a href="url">About The Project</a></li>
+    <li><a href="https://github.com/JamesSedlacek/FetchRewards#demo-videos">Demo Videos</a></li>
+    <li><a href="https://github.com/JamesSedlacek/FetchRewards#screenshots">Screenshots</a></li>
+    <li><a href="https://github.com/JamesSedlacek/FetchRewards#about-the-project">About The Project</a></li>
       <ul>
-        <li><a href="url">How it Works</a></li>
-        <li><a href="url">Technologies Used</a></li>
-        <li><a href="url">Skills Demonstrated</a></li>
+        <li><a href="https://github.com/JamesSedlacek/FetchRewards#how-it-works">How it Works</a></li>
+        <li><a href="https://github.com/JamesSedlacek/FetchRewards#technologies-used">Technologies Used</a></li>
+        <li><a href="https://github.com/JamesSedlacek/FetchRewards#skills-demonstrated">Skills Demonstrated</a></li>
       </ul>
   </ul>
 </div><br><br>
