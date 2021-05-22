@@ -22,7 +22,19 @@
 		A57E69232655629F00DD11A4 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69222655629F00DD11A4 /* K.swift */; };
 		A57E692926556F4300DD11A4 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E692826556F4300DD11A4 /* MapVC.swift */; };
 		A57E692D2659BA1A00DD11A4 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E692C2659BA1A00DD11A4 /* Formatting.swift */; };
+		A57E69372659BC9A00DD11A4 /* FetchRewardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69362659BC9A00DD11A4 /* FetchRewardsTests.swift */; };
+		A57E69412659BCF500DD11A4 /* FormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69402659BCF500DD11A4 /* FormattingTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A57E69392659BC9A00DD11A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A57E68DE265454D800DD11A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A57E68E5265454D800DD11A4;
+			remoteInfo = FetchRewards;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A57E68E6265454D800DD11A4 /* FetchRewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRewards.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,10 +54,21 @@
 		A57E69222655629F00DD11A4 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		A57E692826556F4300DD11A4 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		A57E692C2659BA1A00DD11A4 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
+		A57E69342659BC9A00DD11A4 /* FetchRewardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRewardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57E69362659BC9A00DD11A4 /* FetchRewardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRewardsTests.swift; sourceTree = "<group>"; };
+		A57E69382659BC9A00DD11A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57E69402659BCF500DD11A4 /* FormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A57E68E3265454D800DD11A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57E69312659BC9A00DD11A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				A57E68E8265454D800DD11A4 /* FetchRewards */,
+				A57E69352659BC9A00DD11A4 /* FetchRewardsTests */,
 				A57E68E7265454D800DD11A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				A57E68E6265454D800DD11A4 /* FetchRewards.app */,
+				A57E69342659BC9A00DD11A4 /* FetchRewardsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +167,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A57E69352659BC9A00DD11A4 /* FetchRewardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A57E69362659BC9A00DD11A4 /* FetchRewardsTests.swift */,
+				A57E69382659BC9A00DD11A4 /* Info.plist */,
+				A57E69402659BCF500DD11A4 /* FormattingTests.swift */,
+			);
+			path = FetchRewardsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +197,24 @@
 			productReference = A57E68E6265454D800DD11A4 /* FetchRewards.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A57E69332659BC9A00DD11A4 /* FetchRewardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A57E693B2659BC9A00DD11A4 /* Build configuration list for PBXNativeTarget "FetchRewardsTests" */;
+			buildPhases = (
+				A57E69302659BC9A00DD11A4 /* Sources */,
+				A57E69312659BC9A00DD11A4 /* Frameworks */,
+				A57E69322659BC9A00DD11A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A57E693A2659BC9A00DD11A4 /* PBXTargetDependency */,
+			);
+			name = FetchRewardsTests;
+			productName = FetchRewardsTests;
+			productReference = A57E69342659BC9A00DD11A4 /* FetchRewardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -173,6 +226,10 @@
 				TargetAttributes = {
 					A57E68E5265454D800DD11A4 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					A57E69332659BC9A00DD11A4 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = A57E68E5265454D800DD11A4;
 					};
 				};
 			};
@@ -190,6 +247,7 @@
 			projectRoot = "";
 			targets = (
 				A57E68E5265454D800DD11A4 /* FetchRewards */,
+				A57E69332659BC9A00DD11A4 /* FetchRewardsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +261,13 @@
 				A57E68F6265454DC00DD11A4 /* LaunchScreen.storyboard in Resources */,
 				A57E68F3265454DC00DD11A4 /* Assets.xcassets in Resources */,
 				A57E68F1265454D800DD11A4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57E69322659BC9A00DD11A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +292,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A57E69302659BC9A00DD11A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57E69412659BCF500DD11A4 /* FormattingTests.swift in Sources */,
+				A57E69372659BC9A00DD11A4 /* FetchRewardsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A57E693A2659BC9A00DD11A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A57E68E5265454D800DD11A4 /* FetchRewards */;
+			targetProxy = A57E69392659BC9A00DD11A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A57E68EF265454D800DD11A4 /* Main.storyboard */ = {
@@ -403,6 +485,46 @@
 			};
 			name = Release;
 		};
+		A57E693C2659BC9A00DD11A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TUYS5TF5HK;
+				INFOPLIST_FILE = FetchRewardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James-Sedlacek.FetchRewardsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchRewards.app/FetchRewards";
+			};
+			name = Debug;
+		};
+		A57E693D2659BC9A00DD11A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TUYS5TF5HK;
+				INFOPLIST_FILE = FetchRewardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James-Sedlacek.FetchRewardsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchRewards.app/FetchRewards";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -420,6 +542,15 @@
 			buildConfigurations = (
 				A57E68FB265454DC00DD11A4 /* Debug */,
 				A57E68FC265454DC00DD11A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A57E693B2659BC9A00DD11A4 /* Build configuration list for PBXNativeTarget "FetchRewardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57E693C2659BC9A00DD11A4 /* Debug */,
+				A57E693D2659BC9A00DD11A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
