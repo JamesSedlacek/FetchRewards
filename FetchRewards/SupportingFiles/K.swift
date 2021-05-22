@@ -44,4 +44,17 @@ struct K {
         case searchField = "searchField"
     }
     
+    // MARK: - ValidationError
+    
+    enum ValidationError: LocalizedError {
+        case invalidDateTime
+        
+        var errorDescription: String? {
+            switch self {
+            case .invalidDateTime:
+                return "The DateTime is not in the correct format."
+            }
+        }
+    }
+    
 }

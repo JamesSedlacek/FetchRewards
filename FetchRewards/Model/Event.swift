@@ -32,32 +32,16 @@ class Event {
         self.url = url
         self.imageUrlString = imageUrlString
         self.coordinates = coordinates
-        self.date = ""
-        self.time = ""
-        self.image = nil
-        formatDateAndTime(from: dateTime)
-        loadImage()
-    }
-    
-    // MARK: - Formatting Date & Time
-
-    private func formatDateAndTime(from dateTime: String) {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss" //Z
-        if let safeDate = dateFormatterGet.date(from: dateTime) {
-            //Formatted date
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EEEE, dd MMM yyyy"
-            self.date = dateFormatter.string(from: safeDate)
-            
-            //Formatted time
-            let timeFormatter = DateFormatter()
-            timeFormatter.locale = Locale(identifier: "en_US_POSIX")
-            timeFormatter.dateFormat = "hh:mm a"
-            timeFormatter.amSymbol = "AM"
-            timeFormatter.pmSymbol = "PM"
-            self.time = timeFormatter.string(from: safeDate)
+        
+        do {
+            self.date = try Formatting.formatDate(from: dateTime)
+            self.time = try Formatting.formatTime(from: dateTime)
+        } catch {
+            fatalError(error.localizedDescription)
         }
+        
+        self.image = nil
+        loadImage()
     }
     
     // MARK: - Load Image
@@ -67,7 +51,7 @@ class Event {
                 
         getData(from: imageURL, completion: { data, response, error in
             if error != nil {
-                print("Error: \(String(describing: error))")
+                fatalError("Error: \(String(describing: error))")
             }
             
             if let safeData = data {

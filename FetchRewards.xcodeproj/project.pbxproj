@@ -21,6 +21,7 @@
 		A57E6920265549DA00DD11A4 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E691F265549DA00DD11A4 /* UserDefaultsManager.swift */; };
 		A57E69232655629F00DD11A4 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69222655629F00DD11A4 /* K.swift */; };
 		A57E692926556F4300DD11A4 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E692826556F4300DD11A4 /* MapVC.swift */; };
+		A57E692D2659BA1A00DD11A4 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E692C2659BA1A00DD11A4 /* Formatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		A57E691F265549DA00DD11A4 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		A57E69222655629F00DD11A4 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		A57E692826556F4300DD11A4 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		A57E692C2659BA1A00DD11A4 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		A57E68E8265454D800DD11A4 /* FetchRewards */ = {
 			isa = PBXGroup;
 			children = (
+				A57E692B2659BA0000DD11A4 /* Helpers */,
 				A57E68F7265454DC00DD11A4 /* Info.plist */,
 				A57E6902265459D500DD11A4 /* SupportingFiles */,
 				A57E69012654594300DD11A4 /* Managers */,
@@ -129,6 +132,14 @@
 				A57E69222655629F00DD11A4 /* K.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A57E692B2659BA0000DD11A4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A57E692C2659BA1A00DD11A4 /* Formatting.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				A57E69232655629F00DD11A4 /* K.swift in Sources */,
 				A57E691C2654A8E200DD11A4 /* ShowEventVC.swift in Sources */,
 				A57E690B265462E200DD11A4 /* EventTVCell.swift in Sources */,
+				A57E692D2659BA1A00DD11A4 /* Formatting.swift in Sources */,
 				A57E690F2654699400DD11A4 /* ApiManager.swift in Sources */,
 				A57E68EA265454D800DD11A4 /* AppDelegate.swift in Sources */,
 				A57E692926556F4300DD11A4 /* MapVC.swift in Sources */,
