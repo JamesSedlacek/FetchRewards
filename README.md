@@ -77,6 +77,8 @@
     <li>Delegate Pattern</li>
     <li>Observer Pattern</li>
     <li>UserDefaults</li>
+    <li>Error Handling</li>
+    <li>Unit Testing</li>
     <li>URLSession</li>
     <li>JSON Decoding</li>
     <li>DispatchQueue Async Multithreading</li>
