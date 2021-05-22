@@ -17,6 +17,7 @@
         <li><a href="https://github.com/JamesSedlacek/FetchRewards#how-it-works">How it Works</a></li>
         <li><a href="https://github.com/JamesSedlacek/FetchRewards#technologies-used">Technologies Used</a></li>
         <li><a href="https://github.com/JamesSedlacek/FetchRewards#skills-demonstrated">Skills Demonstrated</a></li>
+        <li><a href="https://github.com/JamesSedlacek/FetchRewards#features-to-add">Features to Add</a></li>
       </ul>
   </ul>
 </div><br><br>
@@ -56,16 +57,16 @@
   Favorited events are persisted through the use of UserDefaults.<br>
   </p>
   
-  <div>
+<div>
   <h3>Technologies Used</h3>
-  <ul>
-    <li>SeatGeek API</li>
-    <li>Swift</li>
-    <li>Xcode</li>
-    <li>UIKit</li>
-    <li>Storyboards & XIB</li>
-    <li>MapKit</li>
-    <li>CoreLocation</li>
+    <ul>
+      <li>SeatGeek API</li>
+      <li>Swift</li>
+      <li>Xcode</li>
+      <li>UIKit</li>
+      <li>Storyboards & XIB</li>
+      <li>MapKit</li>
+      <li>CoreLocation</li>
   </ul>
 </div>
   
@@ -79,6 +80,15 @@
     <li>URLSession</li>
     <li>JSON Decoding</li>
     <li>DispatchQueue Async Multithreading</li>
+  </ul>
+</div>
+
+<div>
+  <h3>Features to Add</h3>
+  <ul>
+    <li>Double Tap Gesture to Favorite Events</li>
+    <li>Tab Bar for Searching, Favorites, & Settings</li>
+    <li>Sorting & Filtering in Search</li>
   </ul>
 </div>
 
