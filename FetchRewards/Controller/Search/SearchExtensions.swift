@@ -41,20 +41,17 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.cellIdentifier) as? EventTVCell else { return UITableViewCell() }
+        let event = eventsToShow[indexPath.row]
         
-        guard let image = eventsToShow[indexPath.row].image else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.cellIdentifier) as? EventTVCell,
+              let image = eventsToShow[indexPath.row].image else { return UITableViewCell() }
         
         cell.awakeFromNib()
-        cell.dateLabel.text = eventsToShow[indexPath.row].date
-        cell.timeLabel.text = eventsToShow[indexPath.row].time
-        cell.titleLabel.text = eventsToShow[indexPath.row].title
+        cell.dateLabel.text = event.date
+        cell.timeLabel.text = event.time
+        cell.titleLabel.text = event.title
         cell.displayedImageView.image = image
-        
-        let isFavorited = UserDefaultsManager.contains(key: .Favorites,
-                                                       element: eventsToShow[indexPath.row].id)
-        
-        cell.heartImageView.alpha = isFavorited ? 1.0 : 0.0
+        cell.heartImageView.alpha = event.isFavorited ? 1.0 : 0.0
         
         return cell
     }

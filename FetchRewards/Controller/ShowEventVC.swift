@@ -27,14 +27,7 @@ class ShowEventVC: UIViewController {
     
     @IBAction func heartButtonTapped(_ sender: UIButton) {
         guard let safeEvent = eventToShow else { return }
-        let isFavorited = UserDefaultsManager.contains(key: .Favorites, element: safeEvent.id)
-        
-        if isFavorited {
-            UserDefaultsManager.remove(favoriteID: safeEvent.id)
-        } else {
-            UserDefaultsManager.append(favoriteID: safeEvent.id)
-        }
-        
+        safeEvent.toggleFavorited()
         setHeartIcon()
     }
     
@@ -71,9 +64,8 @@ class ShowEventVC: UIViewController {
     
     private func setHeartIcon() {
         guard let safeEvent = eventToShow else { return }
-        let isFavorited = UserDefaultsManager.contains(key: .Favorites, element: safeEvent.id)
-        let iconImage = isFavorited ? K.Images.heartFilled : K.Images.emptyHeart
-        heartButton.tintColor = isFavorited ? .red : .black
+        let iconImage = safeEvent.isFavorited ? K.Images.heartFilled : K.Images.emptyHeart
+        heartButton.tintColor = safeEvent.isFavorited ? .red : .black
         heartButton.setImage(iconImage, for: .normal)
     }
 

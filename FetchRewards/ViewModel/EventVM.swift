@@ -34,8 +34,9 @@ public class EventVM {
                                       longitude: event.lon)
     }
     
-    public var id: Int {
-        return event.id
+    public var isFavorited: Bool {
+        return UserDefaultsManager.contains(key: .Favorites,
+                                            element: event.id)
     }
     
     // MARK: - initializer
@@ -52,6 +53,16 @@ public class EventVM {
 
         self.image = nil
         loadImage()
+    }
+    
+    // MARK: - Toggle Favorited
+    
+    public func toggleFavorited() {
+        if self.isFavorited {
+            UserDefaultsManager.remove(favoriteID: event.id)
+        } else {
+            UserDefaultsManager.append(favoriteID: event.id)
+        }
     }
     
     // MARK: - Load Image
