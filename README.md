@@ -73,7 +73,7 @@
 <div>
   <h3>Skills Demonstrated</h3>
   <ul>
-    <li>MVC Pattern</li>
+    <li>MVVM Pattern</li>
     <li>Delegate Pattern</li>
     <li>Observer Pattern</li>
     <li>UserDefaults</li>
@@ -81,7 +81,7 @@
     <li>Unit Testing</li>
     <li>URLSession</li>
     <li>JSON Decoding</li>
-    <li>DispatchQueue Async Multithreading</li>
+    <li>Multithreading</li>
   </ul>
 </div>
 
