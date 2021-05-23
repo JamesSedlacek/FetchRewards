@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Protocols
 
 protocol EventDelegate {
-    func updateEvents(events: [Event])
+    func updateEvents(events: [EventVM])
 }
 
 // MARK: - SearchVC Class
@@ -19,9 +19,9 @@ class SearchVC: UIViewController {
     
     // MARK: - Variables
     
-    var eventsToShow: [Event] = [] 
+    var eventsToShow: [EventVM] = []
     var eventDelegate: EventDelegate?
-    var selectedEvent: Event?
+    var selectedEvent: EventVM?
     
     // MARK: - IBOutlets
     
@@ -163,7 +163,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Event Delegate
 
 extension SearchVC: EventDelegate {
-    func updateEvents(events: [Event]) {
+    func updateEvents(events: [EventVM]) {
         eventsToShow = events
     }
 }

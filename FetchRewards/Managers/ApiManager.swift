@@ -107,32 +107,28 @@ struct ApiManager {
     //MARK: - Parse JSON
     
     private static func parseJSON(with data: Data) {
-        var events: [Event] = []
+        var events: [EventVM] = []
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ResponseDocument.self, from: data)
             for document in decodedData.events {
-                let location = document.venue.city +  ", " + document.venue.state
-                
-                events.append(Event(id: document.id,
-                                    title: document.title,
-                                    dateTime: document.datetime_local,
-                                    location: location,
-                                    imageUrlString: document.performers[0].image,
-                                    url: document.url,
-                                    coordinates: CLLocationCoordinate2D(latitude: document.venue.location.lat,
-                                                                        longitude: document.venue.location.lon)))
+                let event = Event(title: document.title,
+                                  city: document.venue.city,
+                                  state: document.venue.state,
+                                  dateTime: document.datetime_local,
+                                  imageUrlString: document.performers[0].image,
+                                  id: document.id,
+                                  url: document.url,
+                                  lat: document.venue.location.lat,
+                                  lon: document.venue.location.lon)
+                events.append(EventVM(event: event))
             }
             
             eventDelegate?.updateEvents(events: events)
         } catch {
-            //Use this for debugging
-//            print("Parse JSON Error: \(error)")
-            return
+            fatalError("Parse JSON Error: \(error)")
         }
         
     }
     
-    
-
 }

@@ -24,6 +24,7 @@
 		A57E692D2659BA1A00DD11A4 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E692C2659BA1A00DD11A4 /* Formatting.swift */; };
 		A57E69372659BC9A00DD11A4 /* FetchRewardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69362659BC9A00DD11A4 /* FetchRewardsTests.swift */; };
 		A57E69412659BCF500DD11A4 /* FormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69402659BCF500DD11A4 /* FormattingTests.swift */; };
+		A57E69462659D42C00DD11A4 /* EventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E69452659D42C00DD11A4 /* EventVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		A57E69362659BC9A00DD11A4 /* FetchRewardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRewardsTests.swift; sourceTree = "<group>"; };
 		A57E69382659BC9A00DD11A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A57E69402659BCF500DD11A4 /* FormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingTests.swift; sourceTree = "<group>"; };
+		A57E69452659D42C00DD11A4 /* EventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A57E68F7265454DC00DD11A4 /* Info.plist */,
 				A57E6902265459D500DD11A4 /* SupportingFiles */,
 				A57E69012654594300DD11A4 /* Managers */,
+				A57E69442659D3F500DD11A4 /* ViewModel */,
 				A57E69002654593C00DD11A4 /* Controller */,
 				A57E68FF2654593600DD11A4 /* View */,
 				A57E68FE2654592700DD11A4 /* Model */,
@@ -175,6 +178,14 @@
 				A57E69402659BCF500DD11A4 /* FormattingTests.swift */,
 			);
 			path = FetchRewardsTests;
+			sourceTree = "<group>";
+		};
+		A57E69442659D3F500DD11A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A57E69452659D42C00DD11A4 /* EventVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				A57E692926556F4300DD11A4 /* MapVC.swift in Sources */,
 				A57E6912265471C300DD11A4 /* Event.swift in Sources */,
 				A57E68EC265454D800DD11A4 /* SceneDelegate.swift in Sources */,
+				A57E69462659D42C00DD11A4 /* EventVM.swift in Sources */,
 				A57E6920265549DA00DD11A4 /* UserDefaultsManager.swift in Sources */,
 				A57E69162654796200DD11A4 /* SearchVC.swift in Sources */,
 			);

@@ -11,7 +11,7 @@ class ShowEventVC: UIViewController {
     
     // MARK: - Variables
     
-    var eventToShow: Event?
+    var eventToShow: EventVM?
     
     // MARK: - IBOutlets
     
