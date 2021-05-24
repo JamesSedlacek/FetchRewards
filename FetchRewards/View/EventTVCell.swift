@@ -22,7 +22,6 @@ class EventTVCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        clipsToBounds = true
         displayedImageView.layer.cornerRadius = K.Numbers.cornerRadius
     }
 }

@@ -52,12 +52,17 @@ class ShowEventVC: UIViewController {
     
     private func setup() {
         guard let safeEvent = eventToShow else { return }
+        
+        //ImageView
         displayedImageView.image = safeEvent.image
         displayedImageView.layer.cornerRadius = K.Numbers.cornerRadius
-        displayedImageView.clipsToBounds = true
+        
+        //Labels
         titleLabel.text = safeEvent.title
         dateLabel.text = safeEvent.date + " " + safeEvent.time
         locationLabel.text = safeEvent.location
+        
+        //Buttons
         mapButton.layer.cornerRadius = mapButton.layer.frame.width / 2
         globeButton.layer.cornerRadius = globeButton.layer.frame.width / 2
     }

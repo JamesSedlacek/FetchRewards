@@ -45,11 +45,13 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.cellIdentifier) as? EventTVCell,
               let image = eventsToShow[indexPath.row].image else { return UITableViewCell() }
-        
-        cell.awakeFromNib()
+
+        //Labels
         cell.dateLabel.text = event.date
         cell.timeLabel.text = event.time
         cell.titleLabel.text = event.title
+        
+        //Images
         cell.displayedImageView.image = image
         cell.heartImageView.alpha = event.isFavorited ? 1.0 : 0.0
         

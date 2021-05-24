@@ -19,7 +19,7 @@ struct Formatting {
         else { throw K.ValidationError.invalidDateTime }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, dd MMM yyyy"
+        dateFormatter.dateFormat = "EEEE, dd MMM yyyy" //Example: Wednesday, 19 May 2021
         return dateFormatter.string(from: safeDate)
     }
     
@@ -34,7 +34,7 @@ struct Formatting {
         
         let timeFormatter = DateFormatter()
         timeFormatter.locale = Locale(identifier: "en_US_POSIX")
-        timeFormatter.dateFormat = "hh:mm a"
+        timeFormatter.dateFormat = "hh:mm a" //Example: 01:15 PM
         timeFormatter.amSymbol = "AM"
         timeFormatter.pmSymbol = "PM"
         return timeFormatter.string(from: safeDate)
