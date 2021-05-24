@@ -12,37 +12,29 @@ public class EventVM {
     
     // MARK: - Variables
     
-    private let event: Event
-    public var date: String
-    public var time: String
+    private let id: Int
+    public let date: String
+    public let time: String
+    public let title: String
+    public let location: String
+    public let url: String
+    public let coordinates: CLLocationCoordinate2D
     public var image: UIImage?
-    
-    public var title: String {
-        return event.title
-    }
-    
-    public var location: String {
-        return event.city + ", " + event.state
-    }
-    
-    public var url: String {
-        return event.url
-    }
-    
-    public var coordinates: CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: event.lat,
-                                      longitude: event.lon)
-    }
     
     public var isFavorited: Bool {
         return UserDefaultsManager.contains(key: .Favorites,
-                                            element: event.id)
+                                            element: id)
     }
     
     // MARK: - initializer
     
     init(event: Event) {
-        self.event = event
+        id = event.id
+        title = event.title
+        location = event.city + ", " + event.state
+        url = event.url
+        coordinates = CLLocationCoordinate2D(latitude: event.lat,
+                                             longitude: event.lon)
         
         do {
             self.date = try Formatting.formatDate(from: event.dateTime)
@@ -52,23 +44,23 @@ public class EventVM {
         }
 
         self.image = nil
-        loadImage()
+        loadImage(from: event.imageUrlString)
     }
     
     // MARK: - Toggle Favorited
     
     public func toggleFavorited() {
         if self.isFavorited {
-            UserDefaultsManager.remove(favoriteID: event.id)
+            UserDefaultsManager.remove(favoriteID: id)
         } else {
-            UserDefaultsManager.append(favoriteID: event.id)
+            UserDefaultsManager.append(favoriteID: id)
         }
     }
     
     // MARK: - Load Image
     
-    private func loadImage() {
-        guard let imageURL = URL(string: self.event.imageUrlString) else { return }
+    private func loadImage(from urlString: String) {
+        guard let imageURL = URL(string: urlString) else { return }
                 
         getData(from: imageURL, completion: { data, response, error in
             if error != nil {
