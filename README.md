@@ -37,9 +37,10 @@
 <h2>Screenshots</h2>
 <div width=1000 align="center">
   <p float="left">
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/search_iphone12promaxpacificblue_portrait.png" width="300" height="566">
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/show_iphone12promaxpacificblue_portrait.png" width="300" height="566">
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/map_iphone12promaxpacificblue_portrait.png" width="300" height="566">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/SearchTab.png" width="300" height="566">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/FavoritesTab.png" width="300" height="566">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/MapView.png" width="300" height="566">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/DetailView.png" width="300" height="566">
   </p>
 </div><br><br>
 
@@ -89,7 +90,6 @@
   <h3>Features to Add</h3>
   <ul>
     <li>Double Tap Gesture to Favorite Events</li>
-    <li>Tab Bar for Searching, Favorites, & Settings</li>
     <li>Sorting & Filtering in Search</li>
   </ul>
 </div>
