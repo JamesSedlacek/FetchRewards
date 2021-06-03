@@ -32,6 +32,8 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = false
+        setDelegates()
         tableView.reloadData()
     }
     
@@ -94,6 +96,7 @@ class SearchVC: UIViewController {
         if let vc = segue.destination as? ShowEventVC,
            let safeEvent = selectedEvent {
             vc.eventToShow = safeEvent
+            vc.modalPresentationStyle = .fullScreen
         }
     }
 }

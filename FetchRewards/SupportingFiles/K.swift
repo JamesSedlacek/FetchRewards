@@ -24,6 +24,19 @@ struct K {
         static let emptyHeart = UIImage(systemName: "heart")
     }
     
+    // MARK: - Colors
+    
+    struct Colors {
+        static let accentColor = UIColor(named: "AccentColor")
+    }
+    
+    // MARK: - Fonts
+    
+    struct Fonts {
+        static let navBarFont = UIFont.systemFont(ofSize: 22,
+                                                  weight: .semibold)
+    }
+    
     // MARK: - Numbers
     
     struct Numbers {

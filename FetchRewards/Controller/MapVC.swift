@@ -18,10 +18,11 @@ class MapVC: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK: - IBActions
     
-    @IBAction func xmarkButtonTapped(_ sender: UIButton) {
+    @IBAction func backButtonTapped(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
@@ -30,6 +31,12 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMap()
+        setupBackButton()
+    }
+    
+    func setupBackButton() {
+        backButton.layer.cornerRadius = backButton.layer.frame.width / 2
+        backButton.clipsToBounds = true
     }
     
     func setupMap() {

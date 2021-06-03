@@ -72,6 +72,7 @@ struct ApiManager {
     
     private static let apiEndpoint: String = "https://api.seatgeek.com/2"
     private static let queryEndpoint: String = "/events?q="
+    private static let queryIDsEndpoint: String = "/events?id="
     private static let clientIDEndpoint: String = "&client_id="
     private static let clientID: String = "MjE5NTUzNzh8MTYyMTM3MzcyMy4xOTk4NzY4"
     public static var eventDelegate: EventDelegate?
@@ -129,6 +130,45 @@ struct ApiManager {
             fatalError("Parse JSON Error: \(error)")
         }
         
+    }
+    
+    // MARK: - Fetch Favorites
+    
+    public static func fetchFavorites() {
+        var queryString = ""
+        let favorites = UserDefaultsManager.getFavorites()
+        if favorites.count == 0 { return }
+        
+        for favorite in favorites {
+            queryString += String(favorite) + ","
+        }
+        
+        queryString.remove(at: queryString.index(before: queryString.endIndex))
+        
+        
+        let urlString: String = apiEndpoint +
+                                queryIDsEndpoint +
+                                queryString +
+                                clientIDEndpoint +
+                                clientID
+        
+        if let url = Foundation.URL(string: urlString) { //create URL
+            let session = URLSession(configuration: .default) //Create URL Session
+            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in //Give the session a task
+                
+                //if there's an error, print the error and exit the function
+                if let theError = error {
+                    print(theError)
+                    return
+                }
+                
+                //if there is data, parse the JSON
+                if let safeData = data {
+                    self.parseJSON(with: safeData)
+                }
+            })
+            task.resume() //Start the task
+        }
     }
     
 }

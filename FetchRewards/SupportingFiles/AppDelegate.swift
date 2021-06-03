@@ -14,7 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupNavBar()
         return true
+    }
+    
+    private func setupNavBar() {
+        UINavigationBar.appearance().barTintColor = K.Colors.accentColor
+        UINavigationBar.appearance().backgroundColor = K.Colors.accentColor
+        UINavigationBar.appearance().titleTextAttributes = [ .foregroundColor : UIColor.white,
+                                                             .font : K.Fonts.navBarFont]
+        UINavigationBar.appearance().isTranslucent = false
     }
 
     // MARK: UISceneSession Lifecycle

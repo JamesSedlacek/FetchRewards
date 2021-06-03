@@ -42,6 +42,14 @@ class ShowEventVC: UIViewController {
         }
     }
     
+    // MARK: - ViewDidAppear
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     // MARK: - ViewDidLoad
 
     override func viewDidLoad() {
