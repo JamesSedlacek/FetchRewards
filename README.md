@@ -2,6 +2,19 @@
 <h1 align="center">Take Home Project</h1><br>
 
 <div>
+<p>
+  <h2>Overview</h2><br>
+  
+  This project was created as a take-home project for the company 'Fetch Rewards'. <br>
+  After the project was submitted I passed a 1-hour Zoom Technical Interview. <br>
+  After that I did a 4.5-hour Zoom Interview with 5 people on the team. <br>
+  
+  /* Demo Videos not updated yet */ <br><br>
+  </p>
+  
+</div>
+  
+<div>
   <h2>Table of Contents</h2>
   <ul>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#demo-videos">Demo Videos</a></li>
@@ -12,6 +25,8 @@
         <li><a href="https://github.com/JamesSedlacek/FetchRewards#map-button">Map Button</a></li>
       </ul>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#screenshots">Screenshots</a></li>
+    <li><a href="https://github.com/JamesSedlacek/FetchRewards#architecture">Architecture</a></li>
+    <li><a href="https://github.com/JamesSedlacek/FetchRewards#storyboard">Storyboard</a></li>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#about-the-project">About The Project</a></li>
       <ul>
         <li><a href="https://github.com/JamesSedlacek/FetchRewards#how-it-works">How it Works</a></li>
@@ -42,6 +57,16 @@
     <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/MapView.png" width="300" height="566">
     <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/DetailView.png" width="300" height="566">
   </p>
+</div><br><br>
+
+<h2>Architecture</h2>
+<div width=1000 align="left">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/Architecture.png">
+</div><br><br>
+
+<h2>Storyboard</h2>
+<div width=1000 align="center">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/Storyboard.png">
 </div><br><br>
 
 <p>
@@ -80,9 +105,9 @@
     <li>UserDefaults</li>
     <li>Error Handling</li>
     <li>Unit Testing</li>
-    <li>URLSession</li>
     <li>JSON Decoding</li>
     <li>Multithreading</li>
+    <li>API Integration</li>
   </ul>
 </div>
 
