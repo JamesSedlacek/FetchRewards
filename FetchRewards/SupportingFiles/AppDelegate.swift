@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupNavBar() {
-        UINavigationBar.appearance().barTintColor = K.Colors.accentColor
-        UINavigationBar.appearance().backgroundColor = K.Colors.accentColor
+        UINavigationBar.appearance().barTintColor = K.Colors.accent
+        UINavigationBar.appearance().backgroundColor = K.Colors.accent
         UINavigationBar.appearance().titleTextAttributes = [ .foregroundColor : UIColor.white,
                                                              .font : K.Fonts.navBarFont]
         UINavigationBar.appearance().isTranslucent = false

@@ -78,7 +78,7 @@ class ShowEventVC: UIViewController {
     private func setHeartIcon() {
         guard let safeEvent = eventToShow else { return }
         let iconImage = safeEvent.isFavorited ? K.Images.heartFilled : K.Images.emptyHeart
-        heartButton.tintColor = safeEvent.isFavorited ? .red : .black
+        heartButton.tintColor = safeEvent.isFavorited ? .red : .label
         heartButton.setImage(iconImage, for: .normal)
     }
 

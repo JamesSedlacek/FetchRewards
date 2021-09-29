@@ -27,7 +27,7 @@ struct K {
     // MARK: - Colors
     
     struct Colors {
-        static let accentColor = UIColor(named: "AccentColor")
+        static let accent = UIColor(named: "AccentColor")
     }
     
     // MARK: - Fonts
