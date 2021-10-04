@@ -8,8 +8,7 @@
   This project was created as a take-home project for the company 'Fetch Rewards'. <br>
   After the project was submitted I passed a 1-hour Zoom Technical Interview. <br>
   After that I did a 4.5-hour Zoom Interview with 5 people on the team. <br>
-  
-  /* Demo Videos not updated yet */ <br><br>
+  <br><br>
   </p>
   
 </div>
@@ -17,13 +16,7 @@
 <div>
   <h2>Table of Contents</h2>
   <ul>
-    <li><a href="https://github.com/JamesSedlacek/FetchRewards#demo-videos">Demo Videos</a></li>
-      <ul>
-        <li><a href="https://github.com/JamesSedlacek/FetchRewards#favorite--unfavorite">Favorite & Unfavorite</a></li>
-        <li><a href="https://github.com/JamesSedlacek/FetchRewards#searching">Searching</a></li>
-        <li><a href="https://github.com/JamesSedlacek/FetchRewards#globe-button">Globe Button</a></li>
-        <li><a href="https://github.com/JamesSedlacek/FetchRewards#map-button">Map Button</a></li>
-      </ul>
+    <li><a href="https://github.com/JamesSedlacek/FetchRewards#demo-video">Demo Video</a></li>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#screenshots">Screenshots</a></li>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#architecture">Architecture</a></li>
     <li><a href="https://github.com/JamesSedlacek/FetchRewards#storyboard">Storyboard</a></li>
@@ -37,25 +30,18 @@
   </ul>
 </div><br><br>
 
-<h2>Demo Videos</h2>
+<h2>Demo Video</h2>
 <div align="center" width=1000>
-  <h3>Favorite & Unfavorite</h3>
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Videos/Favorite.gif" width="300" height="566"><br>
-  <h3>Searching</h3>
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Videos/Search.gif" width="300" height="566"><br>
-  <h3>Globe Button</h3>
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Videos/Web.gif" width="300" height="566"><br>
-  <h3>Map Button</h3>
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Videos/map.gif" width="300" height="566"><br>
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Videos/DemoVideo.gif" width="300" height="566"><br>
 </div>
 
 <h2>Screenshots</h2>
 <div width=1000 align="center">
   <p float="left">
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/SearchTab.png" width="300" height="566">
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/FavoritesTab.png" width="300" height="566">
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/MapView.png" width="300" height="566">
-    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/DetailView.png" width="300" height="566">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/Skeleton.png" width="300" height="566">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/Search.png" width="300" height="566">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/Favorites.png" width="300" height="566">
+    <img src="https://github.com/JamesSedlacek/FetchRewards/blob/main/Images/Detail.png" width="300" height="566">
   </p>
 </div><br><br>
 
@@ -87,12 +73,13 @@
   <h3>Technologies Used</h3>
     <ul>
       <li>SeatGeek API</li>
-      <li>Swift</li>
-      <li>Xcode</li>
-      <li>UIKit</li>
+      <li>Swift, UIKit</li>
       <li>Storyboards & XIB</li>
-      <li>MapKit</li>
-      <li>CoreLocation</li>
+      <li>MapKit, CoreLocation</li>
+      <li>SCLAlertView</li>
+      <li>SkeletonView</li>
+      <li>KingFisher</li>
+      <li>CoreData</li>
   </ul>
 </div>
   
@@ -102,7 +89,7 @@
     <li>MVVM Pattern</li>
     <li>Delegate Pattern</li>
     <li>Observer Pattern</li>
-    <li>UserDefaults</li>
+    <li>Data Persistence (CoreData)</li>
     <li>Error Handling</li>
     <li>Unit Testing</li>
     <li>JSON Decoding</li>
