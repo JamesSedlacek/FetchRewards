@@ -7,83 +7,121 @@
 
 import UIKit
 import CoreLocation
+import Kingfisher
 
 public class EventVM {
     
     // MARK: - Variables
     
-    private let id: Int
+    public let id: Int
     public let date: String
     public let time: String
     public let title: String
     public let location: String
     public let url: String
     public let coordinates: CLLocationCoordinate2D
+    public let imageUrl: String
     public var image: UIImage?
-    
-    public var isFavorited: Bool {
-        return UserDefaultsManager.contains(key: .Favorites,
-                                            element: id)
-    }
     
     // MARK: - initializer
     
-    init(event: Event) {
-        id = event.id
-        title = event.title
-        location = event.city + ", " + event.state
-        url = event.url
-        coordinates = CLLocationCoordinate2D(latitude: event.lat,
-                                             longitude: event.lon)
+    init(_ event: ResponseEvent) {
         
+        // These are for better code readability
+        let lat = event.venue.location.lat
+        let lon = event.venue.location.lon
+        let city = event.venue.city
+        let state = event.venue.state
+        
+        // Set the object's properties
+        self.location = city + ", " + state
+        self.id = event.id
+        self.title = event.title
+        self.url = event.url
+        self.imageUrl = event.performers[0].image
+        self.coordinates = CLLocationCoordinate2D(latitude: lat,
+                                                  longitude: lon)
+        
+        // Format Date & Time
         do {
-            self.date = try Formatting.formatDate(from: event.dateTime)
-            self.time = try Formatting.formatTime(from: event.dateTime)
+            self.date = try Formatting.formatDate(from: event.datetime_local)
+            self.time = try Formatting.formatTime(from: event.datetime_local)
         } catch {
             fatalError(error.localizedDescription)
         }
 
-        self.image = nil
-        loadImage(from: event.imageUrlString)
     }
     
-    // MARK: - Toggle Favorited
-    
-    public func toggleFavorited() {
-        if self.isFavorited {
-            UserDefaultsManager.remove(favoriteID: id)
-        } else {
-            UserDefaultsManager.append(favoriteID: id)
-        }
+    init(id: Int,
+         date: String,
+         time: String,
+         title: String,
+         location: String,
+         url: String,
+         imageUrl: String,
+         lon: Double,
+         lat: Double) {
+        self.id = id
+        self.date = date
+        self.time = time
+        self.title = title
+        self.location = location
+        self.url = url
+        self.imageUrl = imageUrl
+        self.coordinates = CLLocationCoordinate2D(latitude: lat,
+                                                  longitude: lon)
     }
     
     // MARK: - Load Image
     
-    private func loadImage(from urlString: String) {
-        guard let imageURL = URL(string: urlString) else { return }
+    public func loadImage(completionHandler: @escaping (Bool) -> Void) { 
+        
+        // Check to see if image is already loaded
+        if self.image != nil {
+            completionHandler(true)
+        }
+        
+        // Create the URL from the urlString
+        guard let url = Foundation.URL(string: imageUrl) else {
+            completionHandler(false)
+            return
+        }
+        
+        DispatchQueue.main.async {
+            let imageView = UIImageView()
+            
+            imageView.kf.setImage(with: url,
+                                  placeholder: nil,
+                                  options: [.cacheOriginalImage],
+                                  completionHandler: { result in
                 
-        getData(from: imageURL, completion: { data, response, error in
-            if error != nil {
-                fatalError("Error: \(String(describing: error))")
-            }
-            
-            if let safeData = data {
-                self.image = UIImage(data: safeData as Data)!
-            }
-            
-            DispatchQueue.main.async {
-                let name = K.NSNotificationName.UpdateTableView.rawValue
-                NotificationCenter.default.post(name:NSNotification.Name(rawValue: name),
-                                                object: nil)
-            }
-        })
+                switch result {
+                case .success(_):
+                    self.image = imageView.image
+                    completionHandler(true)
+                case .failure(_):
+                    // TODO: Handle error
+                    completionHandler(false)
+                }
+            })
+        }
     }
     
-    private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    // MARK: - Favorite
+    
+    public var isFavorited: Bool {
+        return CoreDataManager.contains(self)
     }
     
     public func removeFavorite() {
-        UserDefaultsManager.remove(favoriteID: id)
+        CoreDataManager.remove(self)
+    }
+    
+    public func toggleFavorited() {
+        if self.isFavorited {
+            CoreDataManager.remove(self)
+        } else {
+            CoreDataManager.append(self)
+        }
     }
 }
